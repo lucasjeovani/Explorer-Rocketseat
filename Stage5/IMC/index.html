@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://i.postimg.cc/wxFnYHPR/icons8-body-mass-index-64.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Calculadora de IMC</title>
+
+    <script src="./js/index.js" defer type = "module"></script> <!--para usarmos o script na tag head temos que ter o defer solicitado, e ele é um bollean-->
+</head>
+<body>
+    <!--modal da página de erro-->
+    <div class="alert-error">
+        Digite somente números
+    </div>
+    
+    <!--modal principal da página-->
+    <div class="page">
+        <div class = 'image'>
+            <img src="https://i.postimg.cc/J0s42WNS/captura.jpg" 
+            alt="Um médico com um paciênte analisando seus exames" 
+            class="image">
+        </div>
+        <div class="card">
+            <form>
+                <h1 class = "title">Cálculo de IMC</h1>
+                <div class="input-wrapper">      
+                    <input required class = "input weight" id = "weight" type="text"/>
+                    <label for="weight" class = "input-label">Peso (Kg)</label>
+                </div>
+                <div class="input-wrapper">     
+                    <input required class = "input height" id = "height" type="text">
+                    <label for="height" class = "input-label">Altura (cm)</label>
+                </div>  
+                <button class = "button">
+                    <span>
+                        Calcular IMC
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!--modal para a página de resultado do imc-->
+    <div class="modal-wrapper">
+        <div class="modal ">
+            <h2 class = "title">
+               <span>O seu IMC é de 28</span> 
+            </h2>
+            <button class = "close">
+                <img src="./assets/close.svg" alt="Imagem para fechar o popup" >
+            </button>
+            
+        </div>
+    </div>
+
+</body>
+</html>

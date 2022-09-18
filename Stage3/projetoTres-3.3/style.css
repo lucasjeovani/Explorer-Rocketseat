@@ -1,0 +1,214 @@
+:root {
+    --ff-heading: 'Epilogue', sans-serif;
+    --ff-texting: 'Open sans', sans-serif;
+
+    --hue: 250; 
+    /* Podemos também definir um padrão para um valor no caso o h e deixa-lo pré definido para assim usarmos dentro do hsl com mais 
+    flexibilidade na hora de usar o dev tools, lembrando que esse é apenas mais um modelo a ser usado, não necessariamente será padrão.
+
+             background-color: #28293E; PADRÃO HEX
+            background-color: hsl(237, 22%, 20%);
+    */
+
+    --bg-primary: hsl(var(--hue), 22%, 20%);
+    --fc-primary: hsl(var(--hue), 0%, 100%);
+    --fc-secondary: hsl(var(--hue), 50%, 80%);
+    --fc-secondary-dark: hsl(var(--hue), 100%, 11%);
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+
+    
+    --fs-heading: clamp(4rem, 16px, 5.6rem);
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: var(--ff-texting);
+    background-color: var(--bg-primary);
+
+    font-size: var(--fs-body);
+    
+    color:var(--fc-primary);
+}
+
+.page {
+    max-width: 33rem;
+    margin: 0 auto;
+}
+
+
+
+
+
+main {
+    display: grid;
+    gap: 3.2rem;
+    margin-bottom: 3.0rem;
+
+    animation: downtop 700ms 350ms backwards;
+}
+
+.imgCard img {
+    width: 100%;
+    border-radius: 6px;
+    height: 41.6rem;
+    object-fit: cover;
+
+    transition: 1s;
+
+    filter: brightness(1.5);
+}
+
+.imgCard img:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+header {
+    
+    font-family: var(--ff-heading);
+    
+    margin: 10rem 0 8rem;
+
+    text-align: center;
+
+    animation:topdown 700ms;
+}
+
+header h1 {
+    font-weight: 800;
+    font-size: var(--fs-heading);
+    line-height: 6.4rem;
+}
+
+header p {
+    text-transform: uppercase;
+    margin-bottom: 1.7rem;
+    
+}
+
+.imgCard {
+    position: relative;
+
+    font-family: var(--ff-heading);
+}
+
+
+.imgCard h2 {
+    position: absolute;
+    bottom: 5.2rem;
+    left: 2.8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+    font-size: var(--fs-heading);
+    font-weight: 800;
+}
+
+.imgCard h2 span {
+    border-radius: 2rem;
+    background-color: var(--fc-primary);
+    font-size: var(--fs-body);
+    color: var(--fc-secondary-dark);
+    padding: 0 1.6rem;
+    height: 3.8rem;
+
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+    
+    /*animation-duration: 1s; /*duração pode ser em seg ou ms*/
+    /*animation-direction: reverse; /*no caso pegara do 100% até o 0%*/
+    /*animation-delay: 200ms; /*delay para disparar*/
+    /*animation-timing-function: ease; /*curva besier*/
+    /*animation-iteration-count: infinite; /*coloca o efeito para ficar rodando direto.*/
+    /*animation-play-state: paused; /*pausa a animação e o ideal é usar um :hover para habilitar*/  
+
+/*
+:hover {
+    animation-play-state: running;
+}
+*/
+
+
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 700px) {
+    :root {
+        --fs-heading: 5.6rem;
+    }
+
+    .page {
+        max-width: 117rem;
+        padding: 0 5rem;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1010px) {
+    
+
+    main {
+        grid-template-areas: "colA colB colB"
+        "colC colC colD";
+    }
+
+    /*definindo a área que corresponde a cada elemtno para eles serem locados 
+    de melhor forma no grid-template-areas*/
+    main div:nth-child(1){
+        grid-area: colA;
+    }
+    
+    main div:nth-child(2){
+        grid-area: colB;
+    }
+
+    main div:nth-child(3){
+        grid-area: colC;
+    }
+
+    main div:nth-child(4){
+        grid-area: colD;
+    }
+}

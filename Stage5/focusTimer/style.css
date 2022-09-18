@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fontSize: 62.5%;
+
+    --bg-color: hsla(240, 5%, 7%, 1);
+
+    --base-color: 194;
+    --bg-primary: hsla(var(--base-color), 100%, 63%, 0.13);
+    --primary-color: hsla(var(--base-color), 100%, 63%);
+    --text-color: #FFFFFF;
+
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    font-family: var(--font-family);
+
+    display: grid;
+    
+    height: 55vw;
+}
+
+/*fundo personalizado */
+.gradient-background {
+    background: linear-gradient(300deg,#292222,#444444,#000000);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.hide {
+    display: none;
+}
+
+main {
+    align-self: end; /*joga para baixo o item*/
+    justify-self: center;
+   
+   
+}
+
+.play svg path, 
+.pause svg path,
+.sound-on  path svg {
+    fill: var(--primary-color)
+}
+
+button svg {
+    height: 3rem;
+    width: clamp(3.8rem, 2.3rem + 10vw, 6.4rem);
+}
+
+#timer {
+    font-size: clamp(1rem, 2.8rem + 10vw, 8.8rem);
+    display: flex;
+
+    margin-bottom: 1.6rem;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+#controls {
+    background-color:var(--bg-primary) ;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+    
+    /*border pill - pilula arredonda ao máximo.*/
+    border-radius: 999px;
+
+    width:  clamp(10rem, 12rem + 15vw, 22.8rem);
+    height: clamp(1.5rem, 2rem + 10vw, 7.8rem);
+}
+
+footer {
+    justify-self: end;
+    align-self: end;
+    margin-top: 2.6rem
+    /*padding: 0 4rem 3.2rem 0;*/
+}

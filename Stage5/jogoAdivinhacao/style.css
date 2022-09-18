@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    
+    --fontFamilyH1: 'Montserrat', sans-serif;
+    --fontFamilyPrime: 'DM Sans', sans-serif;
+    
+    
+    --colorH1H2: #34355B;
+    --colorButton: #7879F1;
+    --colorTextButton: #FFFFFF;
+    --colorInputBackground: #DCE2E9;
+    --colorTextInput: rgba(52, 53, 91, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg,#123242,#122530,#52676f);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+body {
+    font-size: 1.6rem;
+
+    background: linear-gradient(287.56deg, #c2c9fb 0%, #a1c4fd 100%);
+    display: grid;
+    place-items: center;
+    height: 50vw;
+    /* margin-top: -12rem; */
+
+}
+
+/*screen 1 e 2*/
+.hide {
+    display: none;
+}
+
+
+
+/*screen1*/
+main h1 {
+    font-family: var(--fontFamilyH1H2);
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+    color: var(--colorH1);
+}
+
+main {
+    text-align: center;
+    height: 27.72rem;
+    width: min(42.8rem, 90%); /*método para trabalhar com o valor em alterações de tamanho da tela
+    se a tela estiver esticada, ela trabalha com 42.8rem, se for reduzida ela vai ficar até 90% dos 42.8rem*/
+    border-radius: 6px;
+    background: #FFFFFF;
+    box-shadow: 0px .2rem .4rem 0 rgba(0, 0, 0, 0.1);
+    padding: 4.8rem 6.4rem 6.4rem;
+}
+
+main p {
+    margin-bottom: 4.8rem;
+    line-height: 2.4rem;
+    color: rgba(52, 53, 91, 0.8);
+    opacity: 0.8;
+}
+
+button, input, body {
+    font-family: var(--fontFamilyPrime);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 8.2rem;
+    height: 5.3rem;
+    border-radius: 0 .4rem .4rem 0;
+    background-color: var(--colorButton);
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    color: var(--colorTextButton);
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5d5dd8;;
+}
+
+
+input {
+    
+    border-radius: .4rem 0 0 .4rem;
+    width: 6.2rem;
+    height: 5.3rem;
+    background: var(--colorInputBackground);
+    color: var(--colorTextInput);
+    border: none;
+    
+}
+
+button, input {
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+}
+
+/*Screen 2*/
+
+.screen2 h2 {
+    color: var(--fontFamilyH1H2);
+    font-family: var(--fontFamilyPrime);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    margin: 3.6rem 0 3.3rem;
+
+}
+
+.screen2 button {
+    width: 18rem;
+    height: 5.3rem;
+    font-size: 1.5rem;
+    padding: 1.6rem;
+    
+    border-radius: .4rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.screen2 button:hover {
+    background-color: rgb(87, 87, 214);
+}

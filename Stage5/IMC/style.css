@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@500;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        font-size: 62.5%;
+
+        /*configuração de variáveis*/
+        --ff-primary: 'Roboto', sans-serif;
+        --bg-card: #f1f2f3;
+        --color-h1: #0C3440;
+        --color-label-primary: #667788;
+        --color-label-secondary: #0b0d0f;
+        --color-input: #212529;
+        --color-alert-error: #FFFFFF;
+        --border-input: #c29090;
+        --bg-button: rgba(240, 62, 62, 1);
+        
+        --bg-button-hover:  #cf1339;
+        --bg-alert-error: rgba(240, 62, 62, 1);
+        --bg-body:#FFFFFF;
+        --bg-modal: #BDD1F9;
+        --fc-modal: #000;
+
+    }
+
+    body {
+        background-color: var(--bg-body);
+        font-family: var(--ff-primary);
+        height: 100vh;
+        gap: clamp(1rem, 10vw, 19rem);
+    }
+
+    body, 
+    input,
+    label,
+    button {
+        line-height: 4.0rem;
+        font-size: 1.6rem;
+    }
+
+    /* página principal*/
+
+    .page {
+        height: 100vh; /*o conteiner page pega toda a tela agora, podendo ficar mais responsivo*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .image {
+        width: 60rem;
+        margin-left: 6rem;
+        
+    }
+
+    form {
+        width: 30rem;
+    }
+
+    /*configuração do card da página principal*/
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background-color: var(--bg-card);
+        min-width: 42.8rem;
+        max-height: 44rem;
+        margin-inline: auto;
+
+        padding: 4rem 6rem 6rem;
+        border-radius: .8rem;
+        box-shadow: .4rem .4rem .4rem rgb(225, 225, 225), -.4rem -.4rem 1rem rgb(225, 225, 225) ; /* 0  eixo x , .4rem eixo y* .4 blur e o rgba*/
+    }
+
+    /*Configuração do título*/
+    h1 {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3.7rem;
+        color: var(--color-h1);
+        cursor: default;
+    }
+
+    /*Estilização dos input e label*/
+
+    #weight {
+        margin-bottom: 4rem;
+    }
+
+    .input-wrapper {
+        position: relative;
+    }
+
+    .input {
+        padding: 1.6rem 1.6rem;
+        border-radius: .6rem;
+        border: none;
+        color: var(--color-input-secondary);
+        background-color: #FFF;
+        height: 5.2rem;
+        width: 100%;
+    }
+
+    .input-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(.8rem, .8rem);
+        transition: transform .25s;
+        color: var(--color-label-primary);
+    }
+
+    .input:focus+.input-label,
+    .input:valid+.input-label {
+        transform: translate(1px, -32px) scale(.8);
+        color: var(--color-label-secondary);
+        padding-inline: .1rem;
+    }
+
+    .input::selection {
+        background: #FFF;
+    }
+
+    .input:is(:focus, valid) {
+        outline: 2px solid var(--border-input);
+    }
+
+    /*Estilização do botao*/
+    .button  {
+        margin-top: 5.2rem;
+        background-color: var(--bg-button);
+        height: 5.2rem;
+        padding: 1.6rem 1.6rem;
+        border-radius: .4rem;
+        border: none;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: whitesmoke;
+        width: 100%; 
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-button);
+        transition: background .8s;
+        
+    }
+
+    .button:before {
+        height: 0%;
+        width: .3rem;
+    }
+
+    .button:hover {
+        background-color: var(--bg-button-hover);
+    }
+
+    /* modal - pop-up */
+
+    .modal-wrapper.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-wrapper {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.7);
+        inset: 0;
+        
+        display: grid;
+        place-content: center;
+
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .modal {
+        position: relative; /* ele será relativo ao button que tem o x que é absoluto.*/
+
+        background-color: var(--bg-modal); 
+        color: var(--fc-modal);
+        width: 40rem;
+        height: 15rem;
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: .4rem;
+        box-shadow: 0 .4rem .4rem rgba(52, 52, 52, 0.997);
+    }
+
+    .modal .close {
+        background: none;
+        border: none;
+        position: absolute;
+        top: .9rem;
+        right: .9rem;
+        cursor: pointer;
+        transition: transform .7s;
+    }
+
+    .modal .close:hover {
+        transform: scale(1.1);
+    }
+
+    /*alert errror*/
+
+    .alert-error.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .alert-error {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-alert-error);
+        font-weight: bold;
+        padding: .1rem;
+        text-align: center;
+        color: var(--color-alert-error);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-30px);
+        transition: transform .8s;
+    }
+
+@media (max-width: 1100px) {
+    .image {
+        display: none;
+    }
+    body {
+        background: #1e2d3c;
+    }
+}
+
+@media (max-width: 435px) {
+    .page {
+        height: 100vh;
+    }
+    .card {
+        background-color: var(--bg-card);
+        width: 34.8rem;
+        max-height: 38rem;
+        margin-inline: auto;
+
+        padding: 30rem 8.8rem;
+        border-radius: .8rem;
+        box-shadow: .4rem .4rem .4rem rgba(0,0,0,0.1); /* 0  eixo x , .4rem eixo y* .4 blur e o rgba*/
+    }
+
+    form {
+        width: 25rem;
+    }
+}
+

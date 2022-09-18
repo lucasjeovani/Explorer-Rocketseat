@@ -1,0 +1,57 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #2f2c38;
+    
+}
+
+h1{
+    font-family: 'Inter', sans-serif;
+    font-size: 49px;
+    line-height: 56px;
+    font-weight: normal; /*por padrão o H1 é bold então está sendo trocada para normal*/
+    margin-bottom: 32px;
+}
+
+#line{
+    width: 568px;
+    border: 1px solid #ECEFF2;
+    margin: 0 auto 8px ;
+}
+
+#hero{
+    width: 592px;
+    margin: 0 auto 72px;
+}
+#footer a + a { /*Pega o elemento "a" anterior para aplicar o que está definido, ou seja, irá 
+    ser aplicado no último a*/ 
+    margin-left:30px;
+}
+
+hero img {
+    margin-bottom: 72px;
+}
+
+h1 span{ /*exemplo de cascata, estou acessando o h1 e o span dentro dele*/
+    font-weight: bold;
+    color: #FF9900;
+    
+}
+
+#balls{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+p, #footer{
+    color: #7D7987;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+a, span{
+    color:#FFA434;
+}
+
