@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário desafio 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+        <header>
+                <h1>Mentoria</h1>
+                <p>Preencha o formulário abaixo para agendar sua mentoria</p>
+
+        </header>
+        
+        <form id="myform" action="">
+            <fieldset>
+                <legend>INFORMAÇÕES PESSOAIS</legend>
+                
+                <div class="fieldset-wrapper">
+                    
+                    <div class="col2">
+                        <div class="input-wrapper">
+                            <label for="name">Nome</label>
+                            <input type="text" placeholder="Primeiro nome" name ="name" id = "name"/>
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="lastname">Sobrenome</label>
+                            <input type="text" placeholder="Segundo nome" name ="lastname" id = "lastname"/>
+                        </div>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="email">Email <span>(digite um email válido)</span></label>
+                        <input type="email" placeholder="Digite seu e-mail" name="email" id="email" required />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="pass">Senha<span>(mínimo de 6 caracteres)</span></label>
+                        <input type="password" name="pass" id="pass" placeholder="Digite a senha" required minlength = "6"/>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>INFORMAÇÕES DO MENTOR</legend>
+                    
+                    <div class="fieldset-wrapper">
+                        <div class="input-wrapper">
+                            <label for="namecoach">Nome do seu mentor</label>
+                            <input type="text" name ="namecoach" id = "namecoach" placeholder="Nome do mentor" required/>
+                        </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>SEUS HORÁRIOS DISPONÍVEIS</legend>
+                    
+                    <div class="fieldset-wrapper">
+                        <legend class="event">PRIMEIRA MENTORIA</legend>
+                        <div class="colfirst">
+                            
+                            <div class="input-wrapper">
+                                <label for="datefisrt">Data <span>(DD/MM/AA)</span></label>
+                                <input type="date" name ="datefisrt" id = "datefisrt" required/>
+                            </div>
+
+                            <div class="colTime">
+                                <div class="input-wrapper">
+                                    <label for="timefirst1">Das</label>
+                                    <input type="time" name ="timefirst1" id = "timefirst1" required/>
+                                </div>
+
+                                <div class="input-wrapper">
+                                    <label for="timefirst2">Até</label>
+                                    <input type="time" name ="timefirst2" id = "timefirst2" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fieldset-wrapper">
+                            <legend class="event">SEGUNDA MENTORIA</legend>
+                            <div class="colfirst">
+                                
+                                <div class="input-wrapper">
+                                    <label for="datefisrt">Data <span>(DD/MM/AA)</span></label>
+                                    <input type="date" name ="datefisrt" id = "datefisrt" required/>
+                                </div>
+                                
+                                <div class="colTime">
+                                    <div class="input-wrapper">
+                                        <label for="timefirst1">Das</label>
+                                        <input type="time" name ="timesecond1" id = "timesecond1" required/>
+                                    </div>
+        
+                                    <div class="input-wrapper">
+                                        <label for="timesecond2">Até</label>
+                                        <input type="time" name ="timesecond2" id = "timesecond2" required/>
+                                    </div>
+                                </div>
+                            </div>     
+            </fieldset>
+
+        </form>
+
+        <footer>
+            <input form ="myform" class="button" type="submit" value="SALVAR" title="SALVAR" />
+        </footer>
+            
+        </div>
+    </div>
+</body>
+</html>

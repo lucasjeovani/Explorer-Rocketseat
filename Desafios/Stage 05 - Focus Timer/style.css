@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --default-fz: 1.6rem;
+
+    --ff-roboto: 'Roboto', sans-serif;
+    --bg-colorBody: #fbfbfb;
+    --fc-colorNumber: #323238;
+
+    --bg-iconDefault: #323238;
+    --bg-cardDefault: rgba(225, 225, 230, 1);
+    --bg-icon: #FFF;
+    --bg-card: #02799D;
+}
+
+body {
+    background-color: var(--bg-colorBody);
+    font-family: var(--ff-roboto);
+    display: grid;
+}
+
+.hide {
+    display: none;
+}
+
+.page {
+    margin-top: 2rem;
+    display:flex;
+    align-items: center;
+    justify-self: center;
+    height: 100vh;
+}
+
+.timerControl {
+    margin-right: 12rem;
+}
+
+.timer  {    
+    display: flex;
+    color: var(--fc-colorNumber);
+    font-size: 12rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.columnOne,
+.columnTwo {
+    display: flex;
+    gap: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.cardForests,
+.cardRain,
+.cardBusiness,
+.firePlace{
+    background-color: var(--bg-cardDefault);
+    width: 13.8rem;
+    height: 15.8rem;
+    border-radius: 2.4rem;
+    cursor: pointer;
+}
+
+.cardForests,
+.cardRain,
+.cardBusiness,
+.firePlace {
+    transition: 900ms;
+}
+
+.cardForests:hover,
+.cardRain:hover,
+.cardBusiness:hover,
+.firePlace:hover {
+    transform: scale(1.01);
+}
+
+button.iconColorSelect {
+    background-color: var(--bg-card);
+}
+
+.iconColorSelect svg path {
+    fill: white;
+}
+
+.numberColor,
+.btnColor svg path {
+    fill: white;
+    color: white;
+}
+/*Resposividade*/
+@media (max-width: 700px) {
+    .page {
+        display: grid;
+        margin-left: 8rem;
+        
+    }
+    .timerControl {
+       display: grid; 
+    }
+    #timer {
+        font-size: 12rem;
+    }
+}
+@media (max-width: 430px) {
+    .page {
+        padding: 10rem;
+        margin-top: 15rem;
+    }
+    .timerControl {
+        margin-bottom: 2rem;
+    }
+}

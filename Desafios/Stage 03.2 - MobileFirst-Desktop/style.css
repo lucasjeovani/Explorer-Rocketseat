@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Roboto&family=Staatliches&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --ff-size: 1.6rem;
+
+    --color-header: #8E9AAF;
+
+    --background-color-h1: #CBC0D3;
+    --font-color-h1: #FFFFFF;
+    --font-size-h1: 4.8rem;
+    --font-size-h2: 2rem;
+    --font-size-p: 1.4rem;
+
+    --ff-staatliches: 'Staatliches', cursive;
+    --ff-palanquin: 'Palanquin', sans-serif;
+    --ff-roboto: 'Roboto';
+}
+
+body {
+    font-size: var(--ff-size) ;
+    max-width: 1280px;
+    margin: auto;
+}
+
+header {
+    background-color: var(--color-header);
+    padding-top: 3.2rem;
+}
+
+header .logo {
+    height: 13.8rem;
+    width: auto;
+    display: block;
+    margin: auto;
+    text-align: center;
+    
+    /*filter*/
+    filter: drop-shadow(0px 1rem 1px rgba(119, 119, 119, 0.5));
+}
+
+h1, h2 {
+    font-family: var(--ff-staatliches);
+    font-style: normal;
+    font-weight: 400;
+}
+
+header h1 {
+    background-color: var(--background-color-h1);
+    color: var(--font-color-h1);
+    margin: 3.2rem auto;
+    height: 5rem;
+    
+    font-size: var(--font-size-h1);
+    /*espaço entre as linhas*/
+    line-height: 3.4rem;
+
+    /*espaço entre letras*/
+    letter-spacing: 0.1rem;
+
+    display: flex;
+    /*display flex desbloqueia atributos add abaixo*/
+    align-items: center;
+    justify-content: center;
+
+}
+
+.box-page {
+    /*1vw equivale a 9px e é ideal usar em abientes responsívos ideal para usar na viwew port
+    para termos responsividade na página*/    
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
+#box-description {
+    /*foi colocada a cor para ficar com a cor do restante do body destoando da logo*/
+    background-color: #FFFFFF;
+    width: 100%;
+    padding-top: 0.1rem;
+    
+}
+
+p {
+    margin: auto;
+    text-align: center;
+    font-family: var(--ff-palanquin);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-p);
+    line-height: 1.6rem;
+    
+    line-height: 2.8rem;
+    color:black;
+}
+
+header p .box-page {
+    margin: 0 auto;
+}
+
+.cards {
+    /* margin-top: 1rem; */
+    
+    display:flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding-bottom: 5rem;
+
+    animation: down-top .4s;
+
+}
+
+.img-card {
+    position: relative;
+    border-radius: 2rem;
+    
+    /*esconde conteúdo*/
+    overflow: hidden;
+    cursor: pointer;
+    width: 10vw;
+    transition: all .4s;
+
+    max-height: 100%;
+    max-width: 100%;
+    /*estica arrumando mais a foto*/
+    object-fit: cover;
+
+}
+
+.img-card:hover {
+    transform: scale(1.04);
+}
+
+.cards .img-card:nth-child(odd) {
+    height: 25rem;
+}
+
+.cards .img-card:nth-child(even) {
+    height: 45rem;
+}
+
+.img-card h2 {
+
+    /*fica acima de objetos*/
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    background-color: #CBC0D3;
+    border-radius: 2rem;
+    padding: 0 2.4rem;
+    font-size: var(--font-size-h2);
+
+    line-height: 3.4rem;
+    letter-spacing: 0.05rem;
+    color: #4A4E69;
+    animation: top-down 0.5s ease 0.4s backwards;
+}
+
+
+.img-desktop {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+@keyframes down-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes top-down {
+
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+
+
+
+@media (min-width: 340px) {
+    body {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    header {
+        width: 30%;
+        max-width: 37rem;
+    }
+
+    header .logo {
+        height: 16.7rem;
+    }
+
+    header h1 {
+        font-size: 3.8rem;
+        height: fit-content;
+        padding: 1rem;
+        text-align: center;
+        line-height: 3rem;
+    }
+
+    header #box-description,
+    header #box-description p {
+        max-width: 100%;
+        color: #FFFFFF;
+    }
+
+    #box-description {
+        /*sem cor*/
+        background-color: transparent;
+    }
+
+    #box-description p {
+        font-family: var(--ff-roboto);
+        font-style: normal;
+        font-size: var(--ff-size);
+        line-height: 2rem;
+        margin-top: -1rem;
+    }
+
+    #box-description p::after {
+        content:'Uma moderna loja virtual que entrega seus sorvetes em  casa, basta escolher o produto e seja feliz, em até 4 horas estaremos em sua casa para saborear a melhor experiência com sorvetes iLove Cream';
+    }
+
+    section .box-page {
+        max-width: 70%;
+        padding: 20rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .cards {
+        margin-top: 0;
+        display: grid;
+        grid-template-areas: 
+        "A B"
+        "D B"
+        "D F";
+
+        padding: 2rem;
+    }
+
+    .cards > div:nth-child(1) {
+        grid-area: A;
+    }
+
+    .cards > div:nth-child(2) {
+        grid-area: B;
+    }
+
+    .cards > div:nth-child(3) {
+        grid-area: F;
+    }
+
+    .cards > div:nth-child(4) {
+        grid-area: D;
+    }
+
+    .cards > div:nth-child(5) {
+        grid-area: C;
+    }
+
+    .cards > div:nth-child(6) {
+        grid-area: E;
+    }
+
+    .cards .img-card:nth-child(odd) {
+        height: 15rem;
+    }
+
+    .cards .img-card:nth-child(even) {
+        height: 35rem;
+    }
+
+
+    .cards .img-card:hover {
+        transform: scale(1.1);
+    }
+
+
+    .img-card h2 {
+        display: none;
+        padding: 0 2.4rem;
+        font-size: var(--font-size-h2);
+        transition: all 0.4s;
+    }
+
+    .img-card:hover h2 {
+        display: block;
+        animation: top-down 0.5s ease backwards;
+    }
+    footer {
+        margin-top: 4rem;
+        display: block;
+    }
+
+    footer span {
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 960px) {
+
+    #box-description p {
+        padding: 0 5.4rem;
+    }
+    section .box-page{
+        padding: 0 9rem;
+        margin: 6.4rem auto 0;
+    }
+    .img-desktop {
+        display: block;
+    }
+
+    .cards {
+        grid-template-areas: 
+        "A B C"
+        "D B E"
+        "D F E";
+    }
+}
+

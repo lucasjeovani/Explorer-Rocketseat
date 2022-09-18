@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --default-fz: 1.6rem;
+    --ff-roboto: 'Roboto', sans-serif;
+    --bg-WhiteMode: #e6e6e6;
+    --bg-DarkMode: #121214;
+    /*Dark Mode*/
+    --fc-NumberBlackMode: #fbfbfb;
+    --bg-card-bm: #252526;    
+    /*White Mode*/
+    --bg-iconDefault: #323238;
+    --bg-cardDefault: rgba(225, 225, 230, 1);
+    --bg-icon: #FFF;
+    --bg-card: #421212;
+    --fc-NumberWhiteMode: #323238;
+    --input-slider-wm: #323238;
+}
+
+/*Dark and White Mode*/
+body.WhiteMode,
+body.DarkMode {
+    font-family: var(--ff-roboto);
+    display: grid;
+    padding: 5rem;
+}
+
+.DarkMode {
+    background-color: var(--bg-DarkMode);
+}
+
+.WhiteMode {
+    background-color: var(--bg-WhiteMode);
+}
+
+.btnModes {
+    display: grid;
+    justify-content: end;
+    align-items: start;
+    margin-bottom: -9rem;
+}
+
+.hide {
+    display: none;
+}
+
+/**/
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Page Default*/
+.page {
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-self: center;
+    height: 100vh;
+}
+
+.timerControl {
+    margin-right: 12rem;
+
+}
+
+.timer {
+    display: flex;
+    font-size: 13rem;
+    color: var(--fc-NumberWhiteMode);
+}
+
+.timerBlackMode {
+    color: var(--fc-NumberBlackMode);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Cursor button*/
+.btnLess {
+    cursor: url('https://i.postimg.cc/FzQX7L1x/icons8-cursor-24-2.png'), auto;
+}
+.btnMore {
+    cursor: url('https://i.postimg.cc/2yprht9h/icons8-cursor-24-1.png'), auto;
+}
+.btnPlay,
+.btnStop {
+    cursor: url('https://i.postimg.cc/C19LJ55Z/icons8-cursor-24.png'), auto;
+}
+
+input {
+    cursor: pointer;
+}
+/**/
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.columnOne,
+.columnTwo {
+    display: flex;
+    gap: 3.2rem;
+    margin-bottom: 6.2rem;
+}
+
+.cardForests,
+.cardRain,
+.cardBusiness,
+.firePlace{
+    background-color: var(--bg-cardDefault);
+    width: 13.8rem;
+    height: 15.8rem;
+    border-radius: 2.4rem;
+    cursor: pointer;
+    box-shadow: .4rem .4rem .4rem rgba(195, 194, 194, 0.985), -.4rem -.4rem .4rem rgba(238, 238, 238, 0.985) ; /* 0  eixo x , .4rem eixo y* .4 blur e o rgba*/
+}
+
+button.card-bmode {
+    background-color: var(--bg-card-bm);
+    box-shadow: .4rem .4rem .4rem rgba(47, 47, 47, 0.985), -.4rem -.4rem .4rem rgba(29, 29, 29, 0.985) 
+}
+
+button.card-wmode {
+    background-color: var(--bg-cardDefault);
+}
+
+button.card-select {
+    background-color: var(--bg-card);
+}
+
+input {
+    position: relative;
+    margin-top: -3rem;
+    margin-left: 2.4rem;
+    width: 9rem;
+}
+
+/*Configuração Input range*/
+.volume[type='range'] {
+    appearance: none; /*reseta propriedades*/
+    background-color: var(--input-slider-wm);
+    border-radius: 100rem;
+    width: 9rem;
+    height: .6rem;
+}
+
+.volume[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none; /*reseta padrões do range*/
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: var(--input-slider-wm);
+    border-radius: 100rem;
+}
+
+.volumeSelect[type='range'] {
+    appearance: none;
+    background-color: #e6e6e6;
+    border-radius: 100rem;
+    width: 9rem;
+    height: .6rem;
+}
+
+.volumeSelect[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: rgb(237, 237, 237);
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 100rem;
+}
+
+.card-bmode svg path {
+    fill: white;
+}
+
+.numberColor,
+.btnColor svg path {
+    fill: white;
+    color: white;
+}
+/*Resposividade*/
+@media (max-width: 798px) {
+    .page {
+        display: grid;
+        justify-content: center;
+        align-items: start;
+        margin-top: 4rem;
+        margin-left: 15rem;
+    }
+    .timerControl {
+       display: grid; 
+    }
+    .timer {
+        font-size: 12rem;
+    }
+}
+@media (max-width: 598px) {
+    .page {
+        padding: 10rem;
+        margin-top: 15rem;
+    }
+    .timerControl {
+        margin-bottom: 4rem;
+    }
+
+    section {
+        margin: 0 4rem 0 0;
+    }
+}
