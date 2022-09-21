@@ -122,7 +122,7 @@ header p .box-page {
     /*esconde conteúdo*/
     overflow: hidden;
     cursor: pointer;
-    width: 10vw;
+    
     transition: all .4s;
 
     max-height: 100%;
