@@ -2,4 +2,4 @@
 
 <h3><a href = 'https://www.figma.com/file/EdKjPWjC8ZlbnH4XzTObv2/Explorer/duplicate'>Link Figma</a></h3>
 
-<img src = 'https://i.postimg.cc/jjtQKQs2/P-gina-est-tica.png'/>
+<img src = 'https://i.postimg.cc/JzWjccHx/P-gina-est-tica.png'/>
