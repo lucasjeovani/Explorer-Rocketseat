@@ -1,7 +1,7 @@
 <h1> Explorer Rocketseat 🚀</h1>
 
 <h2>Sobre</h2>
-<h3>💻 Os projetos criados durante o curso da escola Rocketseat. Os links abaixo te encaminham diretamente para os repositórios. 
+<h3>🖥 Projetos criados durante o curso da escola Rocketseat. Os links abaixo te encaminham diretamente para os repositórios. 
 
 <h2>Projetos</h2>
 
