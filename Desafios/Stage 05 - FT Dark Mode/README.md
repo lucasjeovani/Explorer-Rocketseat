@@ -6,10 +6,10 @@
 - Trabalhar com o volume dos sons de cada card.<br>
 <br>
 As funcionalidades dos botões continuam as mesmas<br><br>
-- Play   :  aciona o timer;<br>
-- Stop   :  para o timer;<br>
-- +    :  aumenta em mais 5 minutos o tempo do timer;<br>
-- -    :  diminui em 5 minutos o tempo do timer.<br>
+Play   :  aciona o timer;<br>
+Stop   :  para o timer;<br>
++    :  aumenta em mais 5 minutos o tempo do timer;<br>
+-    :  diminui em 5 minutos o tempo do timer.<br>
 </h3>
 
 <h2>White Mode</h2>
