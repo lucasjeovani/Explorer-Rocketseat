@@ -1,4 +1,4 @@
-<h1>Focus Timer White and Dark Mode</h1>
+<h1>Focus Timer 2.1 White and Dark Mode</h1>
 
 <h3>
 <a href ='https://www.figma.com/file/nlJJAVuGDc1tnDKqUW4FJA/Stage-05---Dark-Mode-FocusTimer/duplicate'> Link Figma</a><br><br>
